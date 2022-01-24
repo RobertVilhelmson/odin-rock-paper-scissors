@@ -19,33 +19,32 @@ function playRound(human, computer) {
 let humanScore = parseInt(0);
 let computerScore = parseInt(0);
 
-document.getElementById("buttons").addEventListener("click", function () {
-    document.getElementById("test").innerHTML = "Hello World";
-});
+function rock_press() {
+    document.getElementById("test").innerHTML = "Hello World!";
+};
 
+// var i = 0;
+// const play = () => {
+//    let human = prompt("Rock, Paper or Scissors? Choose your weapon!").toLowerCase();
+//    let computer = computerPlay();
+//    let roundResult = playRound(human, computer);
+//
+//    if (roundResult.includes('win')) {
+//        humanScore++;
+//    } else if (roundResult.includes('lose')) {
+//        computerScore++;
+//    }
 
-var i = 0;
-const play = () => {
-    let human = prompt("Rock, Paper or Scissors? Choose your weapon!").toLowerCase();
-    let computer = computerPlay();
-    let roundResult = playRound(human, computer);
-
-    if (roundResult.includes('win')) {
-        humanScore++;
-    } else if (roundResult.includes('lose')) {
-        computerScore++;
-    }
-
-    console.log(playRound(human, computer))
-    console.log("your score = " + humanScore);
-    console.log("Computer's score = " + computerScore);
-    i++;
+//    console.log(playRound(human, computer))
+//    console.log("your score = " + humanScore);
+//    console.log("Computer's score = " + computerScore);
+//    i++;
     // if (i !== 5) {
     //    play();
     // } else {
     //     alert("Game Over=> User("+humanScore+") vs Computer("+computerScore+")");
     // }
-}
+// }
 
 
-play();
+// play();
