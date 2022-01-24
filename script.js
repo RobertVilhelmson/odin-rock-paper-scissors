@@ -1,9 +1,9 @@
 const choices = ['rock', 'paper', 'scissors'];
-const beats = {'rock': 'paper', 'paper': 'scissors', 'scissorcs': 'rock'};
-const upper = {'rock': 'Rock', 'paper': 'Paper', 'scissors': 'Scissors'};
+const beats = { 'rock': 'paper', 'paper': 'scissors', 'scissorcs': 'rock' };
+const upper = { 'rock': 'Rock', 'paper': 'Paper', 'scissors': 'Scissors' };
 
 // Computers choice
-function computerPlay () {
+function computerPlay() {
     return choices[Math.floor(Math.random() * choices.length)];
 }
 
@@ -12,12 +12,16 @@ function playRound(human, computer) {
     return human === computer
         ? `Oh! It's a tie`
         : human = beats[computer]
-        ? `You win! ${upper[human]} beats ${computer}`
-        : `You lose! ${upper[computer]} beats ${human}`;
+            ? `You win! ${upper[human]} beats ${computer}`
+            : `You lose! ${upper[computer]} beats ${human}`;
 }
 
 let humanScore = parseInt(0);
 let computerScore = parseInt(0);
+
+document.getElementById("buttons").addEventListener("click", function () {
+    document.getElementById("test").innerHTML = "Hello World";
+});
 
 
 var i = 0;
@@ -36,12 +40,12 @@ const play = () => {
     console.log("your score = " + humanScore);
     console.log("Computer's score = " + computerScore);
     i++;
-    if (i !== 5) {
-        play();
-    } else {
-        alert("Game Over=> User("+humanScore+") vs Computer("+computerScore+")");
-    }
+    // if (i !== 5) {
+    //    play();
+    // } else {
+    //     alert("Game Over=> User("+humanScore+") vs Computer("+computerScore+")");
+    // }
 }
-   
+
 
 play();
