@@ -24,29 +24,37 @@ function user() {
     console.log("Computer: " + computerChoice);
 
     function compare(userChoice, computerChoice) {
-        if (userChoice == computerChoice)
+        if (userChoice == computerChoice) {
             return "Its a tie!" + tie++;
-        else if (userChoice == "rock")
-            if (computerChoice == "scissors")
-                return "User wins with rock" + userScore++;
-            else
-                return "Computer wins with paper" + computerScore++;
-        else if (userChoice == "paper") {
-            if (computerChoice == "rock")
-                return "User wins with paper" + userScore++;
-            else
-                return "Computer wins with scissors" + computerScore++;
         }
-        else if (userChoice == "scissors")
-            if (computerChoice == "rock")
-                return "Computer wins with rock" + computerScore++;
-            else
-                return "User wins with scissors" + userScore++;
+        else if (userChoice == "rock") {
+            if (computerChoice == "scissors") {
+                return "User wins with rock";
+            }
+            else {
+                return "Computer wins with paper";
+            }
+        }
+        else if (userChoice == "paper") {
+            if (computerChoice == "rock") {
+                return "User wins with paper";
+            }
+            else { return "Computer wins with scissors"; }
+        }
+        else if (userChoice == "scissors") {
+            if (computerChoice == "rock") {
+                return "Computer wins with rock";
+            }
+            else { return "User wins with scissors"; }
+        }
 
     }
 
     round++;
     console.log(round)
+    console.log(userScore)
+    console.log(computerScore)
+    console.log(tie)
     if (round !== 5) {
         var result = compare(userChoice, computerChoice);
         document.getElementById('result').innerHTML = result;
