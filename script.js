@@ -3,8 +3,9 @@ document.getElementById('paper').onclick = user;
 document.getElementById('scissors').onclick = user;
 
 const choices = ['rock', 'paper', 'scissors'];
-const beats = {'rock': 'paper', 'paper': 'scissors', 'scissorcs': 'rock'};
-const upper = {'rock': 'Rock', 'paper': 'Paper', 'scissors': 'Scissors'};
+// const beats = {'rock': 'paper', 'paper': 'scissors', 'scissors': 'rock'};
+// const upper = {'rock': 'Rock', 'paper': 'Paper', 'scissors': 'Scissors'};
+ 
 
 function user() {
     var userChoice = this.id;
@@ -22,12 +23,24 @@ function user() {
     console.log("Computer: " + computerChoice);
 
     console.log(compare(userChoice, computerChoice));
-
-    function compare(userChoice, computerChoice) {
-        return userChoice === computerChoice
-        ? `Oh! It's a tie`
-        : userChoice = beats[computerChoice]
-        ? `You win! ${upper[userChoice]} beats ${computerChoice}`
-        : `You lose! ${upper[userChoice]} beats ${computerChoice}`;
+        function compare(userChoice, computerChoice) {
+            if(userChoice == computerChoice)  //condition 1
+            return "The result is a tie!";
+        else if(userChoice == "rock") //condition 2
+            if(computerChoice == "scissors") 
+                return "rock wins";
+             else 
+                return "paper wins";
+        else if(userChoice == "paper"){ //condition 3
+            if(computerChoice == "rock") 
+                return "paper wins";
+             else 
+                return "scissors wins";
+        }
+        else if(userChoice == "scissors")
+            if(computerChoice == "rock")
+               return "rock wins";
+            else 
+               return "scissors wins";
     }
 }    
