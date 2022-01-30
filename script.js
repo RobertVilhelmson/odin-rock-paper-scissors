@@ -2,6 +2,7 @@ document.getElementById('rock').onclick = user;
 document.getElementById('paper').onclick = user;
 document.getElementById('scissors').onclick = user;
 
+
 var userScore = 0
 var computerScore = 0
 var tie = 0
@@ -24,7 +25,7 @@ function user() {
 
     function compare(userChoice, computerChoice) {
         if (userChoice == computerChoice)
-            return "The result is a tie!" && tie++;
+            document.getElementById('result').innerHTML = "It's a tie!" && tie++;
         else if (userChoice == "rock")
             if (computerChoice == "scissors")
                 return "User wins with rock" && userScore++;
