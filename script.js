@@ -25,7 +25,7 @@ function user() {
 
     function compare(userChoice, computerChoice) {
         if (userChoice == computerChoice)
-            document.getElementById('result').innerHTML = "It's a tie!" + tie++;
+            return "Its a tie!" + tie++;
         else if (userChoice == "rock")
             if (computerChoice == "scissors")
                 return "User wins with rock" + userScore++;
@@ -44,15 +44,13 @@ function user() {
                 return "User wins with scissors" + userScore++;
 
     }
-    
+
     round++;
     console.log(round)
     if (round !== 5) {
-        compare(userChoice, computerChoice);
+        var result = compare(userChoice, computerChoice);
+        document.getElementById('result').innerHTML = result;
     } else {
         alert("Game Over=> User(" + userScore + ") vs Computer(" + computerScore + ")");
     }
 }
-
-console.log(tie);
-
