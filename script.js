@@ -2,6 +2,11 @@ document.getElementById('rock').onclick = user;
 document.getElementById('paper').onclick = user;
 document.getElementById('scissors').onclick = user;
 
+var userScore = 0
+var computerScore = 0
+var tie = 0
+var round = 0
+
 function user() {
     var userChoice = this.id;
     console.log("User: " + userChoice)
@@ -17,25 +22,35 @@ function user() {
 
     console.log("Computer: " + computerChoice);
 
-    console.log(compare(userChoice, computerChoice));
-        function compare(userChoice, computerChoice) {
-            if(userChoice == computerChoice) 
-            return "The result is a tie!";
-        else if(userChoice == "rock") 
-            if(computerChoice == "scissors") 
-                return "rock wins";
-             else 
-                return "paper wins";
-        else if(userChoice == "paper"){ 
-            if(computerChoice == "rock") 
-                return "paper wins";
-             else 
-                return "scissors wins";
+    function compare(userChoice, computerChoice) {
+        if (userChoice == computerChoice)
+            return "The result is a tie!" && tie++;
+        else if (userChoice == "rock")
+            if (computerChoice == "scissors")
+                return "User wins with rock" && userScore++;
+            else
+                return "Computer wins with paper" && computerScore++;
+        else if (userChoice == "paper") {
+            if (computerChoice == "rock")
+                return "User wins with paper" && userScore++;
+            else
+                return "Computer wins with scissors" && computerScore++;
         }
-        else if(userChoice == "scissors")
-            if(computerChoice == "rock")
-               return "rock wins";
-            else 
-               return "scissors wins";
+        else if (userChoice == "scissors")
+            if (computerChoice == "rock")
+                return "Computer wins with rock" && computerScore++;
+            else
+                return "User wins with scissors" && userScore++;
+
     }
-}    
+    round++;
+    console.log(round)
+    if (round == 5) {
+
+        alert("Game Over=> User(" + userScore + ") vs Computer(" + computerScore + ")");
+    }
+}
+
+
+
+
