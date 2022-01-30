@@ -25,7 +25,7 @@ function user() {
 
     function compare(userChoice, computerChoice) {
         if (userChoice == computerChoice) {
-            return "Its a tie!" + tie++;
+            return "Its a tie!";
         }
         else if (userChoice == "rock") {
             if (computerChoice == "scissors") {
