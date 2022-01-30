@@ -54,6 +54,5 @@ function user() {
     }
 }
 
-console.log(tieResult);
 console.log(tie);
 
