@@ -2,11 +2,6 @@ document.getElementById('rock').onclick = user;
 document.getElementById('paper').onclick = user;
 document.getElementById('scissors').onclick = user;
 
-const choices = ['rock', 'paper', 'scissors'];
-// const beats = {'rock': 'paper', 'paper': 'scissors', 'scissors': 'rock'};
-// const upper = {'rock': 'Rock', 'paper': 'Paper', 'scissors': 'Scissors'};
- 
-
 function user() {
     var userChoice = this.id;
     console.log("User: " + userChoice)
@@ -24,14 +19,14 @@ function user() {
 
     console.log(compare(userChoice, computerChoice));
         function compare(userChoice, computerChoice) {
-            if(userChoice == computerChoice)  //condition 1
+            if(userChoice == computerChoice) 
             return "The result is a tie!";
-        else if(userChoice == "rock") //condition 2
+        else if(userChoice == "rock") 
             if(computerChoice == "scissors") 
                 return "rock wins";
              else 
                 return "paper wins";
-        else if(userChoice == "paper"){ //condition 3
+        else if(userChoice == "paper"){ 
             if(computerChoice == "rock") 
                 return "paper wins";
              else 
