@@ -1,7 +1,7 @@
 document.getElementById('rock').onclick = user;
 document.getElementById('paper').onclick = user;
 document.getElementById('scissors').onclick = user;
-
+document.getElementById('reset').onclick = ResetGlobalVariables;
 
 var userScore = 0
 var computerScore = 0
@@ -61,15 +61,41 @@ function user() {
 
     }
 
+
+    function determinWinner(userScore, computerScore) {
+        if (userScore == computerScore) {
+            return "It's a tie!"
+        }
+        else if (userScore > computerScore) {
+            return "You win against the computer!"
+        } else {
+            return "You lose against the computer!"
+        }
+    }
+
     round++;
-    console.log(round)
+    console.log(roundResult)
     console.log(userScore)
     console.log(computerScore)
     console.log(tieScore)
     if (round !== 5) {
-        var result = compare(userChoice, computerChoice);
-        document.getElementById('result').innerHTML = result;
+        var roundResult = compare(userChoice, computerChoice);
+        document.getElementById('result').innerHTML = roundResult;
     } else {
-        alert("Game Over=> User(" + userScore + ") vs Computer(" + computerScore + ") - Ties(" + tieScore + ")");
+        var gameResult = determinWinner(userScore, computerScore);
+        document.getElementById('result').innerHTML = gameResult;
     }
 }
+//Do this initially and call the ResetGlobalVariables at the start to set them properly
+//initialize all variables here. Don't set anything to them.
+var roundResult, userChoice, computerScore, tieScore;
+ResetGlobalVariables();
+
+function ResetGlobalVariables() {
+    //list of all the variables with original attributes here
+    userScore = 0
+    computerScore = 0
+    tieScore = 0
+    round = 0
+}
+
