@@ -1,0 +1,19 @@
+.container {
+    display: flex;
+    border: 5px solid green;
+    flex-direction: column;
+    text-align: center;
+    margin-left: 20%;
+    margin-right: 20%;
+    
+}
+#buttons {
+    border: 5px solid red
+  }
+#result {
+    border: 5px solid yellow;
+}
+
+#reset {
+ border: 5px solid brown
+}

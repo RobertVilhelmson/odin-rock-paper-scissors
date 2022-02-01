@@ -67,7 +67,7 @@ function user() {
             return "It's a tie!"
         }
         else if (userScore > computerScore) {
-            return "You win against the computer!"
+            return "You win against the computer!";
         } else {
             return "You lose against the computer!"
         }
@@ -86,13 +86,12 @@ function user() {
         document.getElementById('result').innerHTML = gameResult;
     }
 }
-//Do this initially and call the ResetGlobalVariables at the start to set them properly
-//initialize all variables here. Don't set anything to them.
+
 var roundResult, userChoice, computerScore, tieScore;
 ResetGlobalVariables();
 
 function ResetGlobalVariables() {
-    //list of all the variables with original attributes here
+
     userScore = 0
     computerScore = 0
     tieScore = 0
