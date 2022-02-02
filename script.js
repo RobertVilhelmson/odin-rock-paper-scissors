@@ -22,6 +22,20 @@ function user() {
     };
 
     console.log("Computer: " + computerChoice);
+    round++;
+    console.log(roundResult)
+    console.log(userScore)
+    console.log(computerScore)
+    console.log(tieScore)
+    
+    
+    if (round !== 5) {
+        var roundResult = compare(userChoice, computerChoice);
+        document.getElementById('result').innerHTML = roundResult;
+    } else {
+        var gameResult = determinWinner(userScore, computerScore);
+        document.getElementById('result').innerHTML = gameResult;
+    }
 }
 
 function compare(userChoice, computerChoice) {
@@ -73,20 +87,7 @@ function determinWinner(userScore, computerScore) {
     }
 }
 
-round++;
-console.log(roundResult)
-console.log(userScore)
-console.log(computerScore)
-console.log(tieScore)
 
-
-if (round !== 5) {
-    var roundResult = compare(userChoice, computerChoice);
-    document.getElementById('result').innerHTML = roundResult;
-} else {
-    var gameResult = determinWinner(userScore, computerScore);
-    document.getElementById('result').innerHTML = gameResult;
-}
 
 
 var roundResult, userChoice, computerScore, tieScore;
@@ -98,5 +99,6 @@ function ResetGlobalVariables() {
     computerScore = 0
     tieScore = 0
     round = 0
+    document.getElementById('result').innerHTML = "Choose your weapon!"
 }
 
