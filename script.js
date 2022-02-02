@@ -23,12 +23,11 @@ function playRound() {
 
     console.log("Computer: " + computerChoice);
     round++;
- 
-    
-    if (round !== 5) {
-        var roundResult = compare(userChoice, computerChoice);
-        document.getElementById('result').innerHTML = roundResult;
-    } else {
+
+    var roundResult = compare(userChoice, computerChoice);
+    document.getElementById('result').innerHTML = roundResult;
+
+    if (round == 5) {
         var gameResult = determinWinner(userScore, computerScore);
         document.getElementById('result').innerHTML = gameResult;
     }
@@ -74,17 +73,14 @@ function compare(userChoice, computerChoice) {
 
 function determinWinner(userScore, computerScore) {
     if (userScore == computerScore) {
-        return "It's a tie!"; // Redundant, should be removed
+        return "It's a tie! Nobody wins!";
     }
     else if (userScore > computerScore) {
-        return `You win agains computer! You: ${userScore} - Computer: ${computerScore} - Tie: ${tieScore}`;
+        return `You win agains the computer! You: ${userScore} - Computer: ${computerScore} - Tie: ${tieScore}`;
     } else {
-        return `You lose agains computer! You: ${userScore} - Computer: ${computerScore} - Tie: ${tieScore}`;
+        return `You lose against the computer! You: ${userScore} - Computer: ${computerScore} - Tie: ${tieScore}`;
     }
 }
-
-
-
 
 var roundResult, userChoice, computerScore, tieScore;
 ResetGlobalVariables();
@@ -97,7 +93,3 @@ function ResetGlobalVariables() {
     round = 0
     document.getElementById('result').innerHTML = "Choose your weapon!"
 }
-console.log(round)
-console.log(userScore)
-console.log(computerScore)
-console.log(tieScore)
