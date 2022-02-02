@@ -8,7 +8,7 @@ var computerScore = 0
 var tieScore = 0
 var round = 0
 
-function user() {
+function playRound() {
     var userChoice = this.id;
     console.log("User: " + userChoice)
 
