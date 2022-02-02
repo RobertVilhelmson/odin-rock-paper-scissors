@@ -1,6 +1,6 @@
-document.getElementById('rock').onclick = user;
-document.getElementById('paper').onclick = user;
-document.getElementById('scissors').onclick = user;
+document.getElementById('rock').onclick = playRound;
+document.getElementById('paper').onclick = playRound;
+document.getElementById('scissors').onclick = playRound;
 document.getElementById('reset').onclick = ResetGlobalVariables;
 
 var userScore = 0
