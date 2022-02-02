@@ -23,11 +23,7 @@ function playRound() {
 
     console.log("Computer: " + computerChoice);
     round++;
-    console.log(roundResult)
-    console.log(userScore)
-    console.log(computerScore)
-    console.log(tieScore)
-    
+ 
     
     if (round !== 5) {
         var roundResult = compare(userChoice, computerChoice);
@@ -78,7 +74,7 @@ function compare(userChoice, computerChoice) {
 
 function determinWinner(userScore, computerScore) {
     if (userScore == computerScore) {
-        return "It's a tie!";
+        return "It's a tie!"; // Redundant, should be removed
     }
     else if (userScore > computerScore) {
         return `You win agains computer! You: ${userScore} - Computer: ${computerScore} - Tie: ${tieScore}`;
@@ -101,4 +97,7 @@ function ResetGlobalVariables() {
     round = 0
     document.getElementById('result').innerHTML = "Choose your weapon!"
 }
-
+console.log(round)
+console.log(userScore)
+console.log(computerScore)
+console.log(tieScore)
