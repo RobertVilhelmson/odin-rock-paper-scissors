@@ -1,25 +1,32 @@
-#result {display: none;}
-
-.container {
-    display: flex;
-    border: 5px solid green;
-    flex-direction: column;
-    text-align: center;
+body {
+    background-color: grey;
     margin-left: 20%;
     margin-right: 20%;
     
+
 }
-#buttons {
-    border: 5px solid red
-  }
 #result {
-    border: 5px solid yellow;
+    display: flex;
+    margin-left: 20%;
+    margin-right: 20%;
+    justify-content: center;
 }
-
 #game {
-    border: 5px solid yellow;
+    display: flex;
+    margin-left: 20%;
+    margin-right: 20%;
+    justify-content: center;
 }
-
-.reset {
- border: 5px solid brown
+.container {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+    
 }
+.buttons {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    
+  }

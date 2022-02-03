@@ -79,9 +79,9 @@ function determinWinner(userScore, computerScore) {
         return "It's a tie! Nobody wins!";
     }
     else if (userScore > computerScore) {
-        return `You win agains the computer! You: ${userScore} - Computer: ${computerScore} - Tie: ${tieScore}`;
+        return `<p>You win agains the Computer!</p> You: ${userScore} - Computer: ${computerScore} - Tie: ${tieScore}`;
     } else {
-        return `You lose against the computer! You: ${userScore} - Computer: ${computerScore} - Tie: ${tieScore}`;
+        return `<p>You lose against the Computer!</p> You: ${userScore} - Computer: ${computerScore} - Tie: ${tieScore}`;
     }
 }
 
@@ -96,5 +96,5 @@ function ResetGlobalVariables() {
     round = 0
     document.getElementById("game").style.display = "flex";
     document.getElementById("result").style.display = "none";
-    document.getElementById('status').innerHTML = "Choose your weapon!"
+    document.getElementById('status').innerHTML = "<p>You have been chosen to battle the Computer in a best of five game of Rock-Paper-Scissors!<p>Choose your weapon!"
 }
