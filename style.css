@@ -1,3 +1,5 @@
+#result {display: none;}
+
 .container {
     display: flex;
     border: 5px solid green;
@@ -14,6 +16,10 @@
     border: 5px solid yellow;
 }
 
-#reset {
+#game {
+    border: 5px solid yellow;
+}
+
+.reset {
  border: 5px solid brown
 }

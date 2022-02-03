@@ -2,6 +2,7 @@ document.getElementById('rock').onclick = playRound;
 document.getElementById('paper').onclick = playRound;
 document.getElementById('scissors').onclick = playRound;
 document.getElementById('reset').onclick = ResetGlobalVariables;
+document.getElementById('reset2').onclick = ResetGlobalVariables;
 
 var userScore = 0
 var computerScore = 0
@@ -25,11 +26,13 @@ function playRound() {
     round++;
 
     var roundResult = compare(userChoice, computerChoice);
-    document.getElementById('result').innerHTML = roundResult;
+    document.getElementById('status').innerHTML = roundResult;
 
     if (round == 5) {
         var gameResult = determinWinner(userScore, computerScore);
-        document.getElementById('result').innerHTML = gameResult;
+        document.getElementById("game").style.display = "none";
+        document.getElementById("result").style.display = "flex";
+        document.getElementById('score').innerHTML = gameResult;
     }
 }
 
@@ -91,5 +94,7 @@ function ResetGlobalVariables() {
     computerScore = 0
     tieScore = 0
     round = 0
-    document.getElementById('result').innerHTML = "Choose your weapon!"
+    document.getElementById("game").style.display = "flex";
+    document.getElementById("result").style.display = "none";
+    document.getElementById('status').innerHTML = "Choose your weapon!"
 }
