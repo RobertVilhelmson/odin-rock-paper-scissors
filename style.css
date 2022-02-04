@@ -27,6 +27,10 @@ body {
 .buttons {
     display: flex;
     justify-content: center;
-    gap: 10px;
-    
-  }
+    gap: 10px; 
+    margin-bottom: 10px;
+    }
+
+#score {
+        margin-bottom: 10px;
+    }
